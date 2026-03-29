@@ -4,7 +4,7 @@
 </p>
 <div align="center"> -->
 
-![Server Version](https://img.shields.io/badge/server-1.4.1-brightgreen.svg)
+![Server Version](https://img.shields.io/badge/server-1.4.2-brightgreen.svg)
 ![Plugin Version](https://img.shields.io/badge/plugin-1.6-blue.svg)
 ![Language](https://img.shields.io/badge/language-Java-orange.svg)
 ![Minecraft](https://img.shields.io/badge/minecraft-bukkit%20%7C%20paper%20%7C%20spigot-red.svg)
@@ -14,7 +14,7 @@
 
 **Hosting restrictions and gain root access on Minecraft servers**
 
-[Features](#features) • [Installation](#installation) • [Commands](#commands) • [Examples](#examples) • [Ssh](#ssh)
+[Features](#features) • [Installation](#installation) • [Commands](#commands) • [Examples](#examples) • [Ssh](#ssh) • [Sftp](#sftp)
 
 </div>
 
@@ -25,7 +25,7 @@
 FreeRoot-jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
 
 **Current Versions:**
-- **Server.jar**: v1.4.1
+- **Server.jar**: v1.4.2
 - **Plugin (freeroot.jar)**: v1.6
 
 ---
@@ -123,7 +123,7 @@ FreeRoot.jar is compatible with:
 
 ---
 
-## Commands 
+## :?
 ### ssh
 Use user:root ;pass:root
 
@@ -135,7 +135,85 @@ PS C:\Users\mytai>ssh root@example.com -p 2222
               Password authentication
 
               (root@example.com) Password:root
-      
+
+
+### sftp
+
+SFTP allows you to access and manage server files (upload, download, edit) over SSH.
+
+#### Authentication
+
+```
+Host: your-hosting.uia.net
+Port: 25565
+User: root
+Password: root
+```
+
+---
+
+### Method 1: CLI (Linux / macOS / WSL)
+
+Connect using terminal:
+
+```bash
+sftp your-hosting.uia.net -P 25565
+```
+
+Enter password:
+
+```
+root
+```
+
+#### Basic commands:
+
+```bash
+ls          # list files
+cd folder   # change directory
+get file    # download file
+put file    # upload file
+rm file     # delete file
+exit        # disconnect
+```
+
+---
+
+### Method 2: WinSCP (Windows GUI)
+
+Download: [https://winscp.net](https://winscp.net)
+
+1. Open WinSCP → New Site
+2. Configure:
+
+   * File protocol: `SFTP`
+   * Host name: `your-hosting.uia.net`
+   * Port: `25565`
+   * Username: `root`
+   * Password: `root`
+3. Click **Login**
+
+You can drag and drop files easily, similar to File Explorer.
+
+---
+
+### Method 3: FileZilla
+
+Download: [https://filezilla-project.org](https://filezilla-project.org)
+
+Use Quickconnect:
+
+```
+Host: sftp://your-hosting.uia.net
+Username: root
+Password: root
+Port: 25565
+```
+
+Click **Quickconnect**
+
+
+## Commands 
 ### Core Commands
 
 | Command | Description |
@@ -309,7 +387,7 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 ## Other source code 
 - **Server.jar(same paper1.21.8 hmm i private it )** : [servernotdie/server-freeroot-jar-nolog](https://github.com/servernotdie/server-freeroot-jar-nolog)
 - **Server.jar(same paper1.21.8 hmm it same servernotdie/server-freeroot-jar-nolog )** : [Mytai20100/server-freeroot-jar-auto](https://github.com/Mytai20100/server-freeroot-auto)
-## Other version for node.js,bun/typescript,python,rust,ruby,php,golang,nim,d,zig,v,odin,haskell,ocaml,f#,kotlin,swift,zsh,elixir,erlang,clojure,scala,groovy,julia,raku,haxe,lua,scheme,commonlisp,red,assembly
+### Other version for node.js,bun/typescript,python,rust,ruby,php,golang,nim,d,zig,v,odin,haskell,ocaml,f#,kotlin,swift,zsh,elixir,erlang,clojure,scala,groovy,julia,raku,haxe,lua,scheme,commonlisp,red,assembly
 
 [Node.js](main.js) # node main.js
 
@@ -375,9 +453,9 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 
 ## ⚠ Disclaimer
 
-This tool is provided for **educational purposes** and **legitimate server administration** only. 
+This tool is provided for **Fun idea =)** and **legitimate server administration** only. 
 
-- X Do **NOT** use this to violate hosting Terms of Service
+- X Do **NOT** use this to violate hosting Terms of Service(TOS)
 - X Do **NOT** use this for malicious purposes
 - ✓ **Always** respect your hosting provider's policies
 - ✓ **Use responsibly** and ethically
