@@ -157,7 +157,7 @@ Password: root
 Connect using terminal:
 
 ```bash
-sftp your-hosting.uia.net -P 25565
+sftp root@your-hosting.uia.net -P 25565
 ```
 
 Enter password:
