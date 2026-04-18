@@ -1,4 +1,4 @@
-# Freeroot-jar - Minecraft Server Root Bypass Access in any hosting
+# Freeroot-jar - minecraft server root access in any hosting
 <!-- <p align="center">
   <img src="https://github.com/Mytai20100/freeroot-jar/blob/main/freeroot.png" alt="Logo freeroot" width="400"/>
 </p>
@@ -22,7 +22,7 @@
 
 ## Overview
 
-FreeRoot-jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
+freeroot-jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
 
 **Current Versions:**
 - **Server.jar**: v1.4.2
@@ -32,13 +32,13 @@ FreeRoot-jar is a powerful tool that allows you to bypass Minecraft hosting rest
 
 ## Features
 
-- **Root Access Bypass**: Execute Linux commands without root permissions
+- **Root Access**: Execute Linux commands without root permissions
 - **Architecture Support**: Compatible with x86_64 (amd64) and aarch64 (arm64)
 - **Multi-Server Support**: Works with Bukkit, Paper, Spigot, and more
 - **Log Management**: Hide/show command output logs
 - **Startup Commands**: Auto-execute commands on plugin load
 - **Restricted Host Support**: Works even on heavily restricted hosting environments 
-
+- **Offline-Ready Execution**: Supports bundled resources and embedded files inside the `.jar`, reducing reliance on external network resolution (e.g. DNS)
 ---
 
 ##  Prerequisites
@@ -66,7 +66,7 @@ Or download manually: [**Download server.jar**](https://github.com/Mytai20100/fr
 
 #### Step 2: Run Server
 ```bash
-java -Xmx1024M -Xms512M -jar server.jar nogui
+java -jar server.jar 
 ```
 
 **That's it!** Enjoy your root access
@@ -269,13 +269,13 @@ startup-commands:
 
 Some hosting providers block input/output or restrict apt functionality. Here's how to bypass these restrictions:
 
-#### Step 1: Locate root.sh
+#### Step 1: Locate noninteractive.sh
 
-Find the `root.sh` file inside the freeroot plugin directory.
+Find the `noninteractive.sh` file inside the freeroot plugin directory.
 
 #### Step 2: Append Custom Commands
 
-Add this snippet at the end of `root.sh`:
+Add this snippet at the end of `noninteractive.sh`:
 ```bash
 $ROOTFS_DIR/usr/local/bin/proot \
   --rootfs="${ROOTFS_DIR}" \
@@ -385,71 +385,25 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 - **Server.jar** : [servernotdie/server-freeroot-jar](https://github.com/servernotdie/server-freeroot-jar)
 - **freeroot.jar(plugin)** : [servernotdie/freeroot-jar](https://github.com/servernotdie/freeroot-jar)
 ## Other source code 
-- **Server.jar(same paper1.21.8 hmm i private it )** : [servernotdie/server-freeroot-jar-nolog](https://github.com/servernotdie/server-freeroot-jar-nolog)
+- **Server.jar(same paper1.21.8)** : [servernotdie/server-freeroot-jar-nolog](https://github.com/servernotdie/server-freeroot-jar-nolog)
 - **Server.jar(same paper1.21.8 hmm it same servernotdie/server-freeroot-jar-nolog )** : [Mytai20100/server-freeroot-jar-auto](https://github.com/Mytai20100/server-freeroot-auto)
-### Other version for node.js,bun/typescript,python,rust,ruby,php,golang,nim,d,zig,v,odin,haskell,ocaml,f#,kotlin,swift,zsh,elixir,erlang,clojure,scala,groovy,julia,raku,haxe,lua,scheme,commonlisp,red,assembly
+### Other versions
 
 [Node.js](main.js) # node main.js
 
-[Bun/TypeScript](main.ts) # ``bun run main.ts``
+[Python](main.py) # python main.py
 
-[Python](main.py) # ``python main.py``
+[Rust](main.rs) # cargo build --release && ./target/release/main
 
-[Rust](main.rs) # ``cargo build --release && ./target/release/main``
+[Go](main.go) # go run main.go
 
-[Ruby](main.rb) # ``ruby main.rb``
+[PHP](main.php) # php main.php
 
-[Php](main.php) # ``php main.php``
+[Lua](main.lua) # lua main.lua
 
-[Golang](main.go) # `` go run main.go``
+[Zsh](main.zsh) # chmod +x main.zsh && ./main.zsh
 
-[Nim](main.nim) # ``nim r main.nim ``
-
-[D](main.d) # ``rdmd main.d``
-
-[Zig](main.zig) # ``zig run main.zig ``
-
-[V](main.v) # ``v run main.v ``
-
-[Odin](main.odin) # ``odin run main.odin -file ``
-
-[Haskell](main.hs) # ``runghc main.hs ``
-
-[OCaml](main.ml) # ``ocamlfind ocamlopt ... main.ml ``
-
-[F#](main.fsx) # ``dotnet fsi main.fsx ``
-
-[Kotlin](main.kt) # ``kotlinc main.kt -include-runtime -d main.jar && java -jar main.jar ``
-
-[Swift](main.swift) # ``swift main.swift ``
-
-[Zsh](main.zsh) # ``chmod +x main.zsh && ./main.zsh ``
-
-[Elixir](main.exs) # ``elixir main.exs ``
-
-[Erlang](main.erl) # ``escript main.erl ``
-
-[Clojure](main.clj) # ``clojure main.clj ``
-
-[Scala](main.scala) # ``scala-cli main.scala ``
-
-[Groovy](main.groovy) # ``groovy main.groovy ``
-
-[Julia](main.jl) # ``julia main.jl ``
-
-[Raku](main.raku) # ``raku main.raku ``
-
-[Haxe](main.hx) # ``haxe --main Main --interp or compile cpp/hl ``
-
-[Lua](main.lua) # ``lua main.lua ``
-
-[Scheme](main.scm) # ``guile main.scm ``
-
-[Common Lisp](main.lisp) # ``sbcl --script main.lisp``
-
-[Red](main.red) # ``red main.red ``
-
-[Assembly](main.asm) # ``bash build_asm.sh ``
+[Assembly](main.asm) # bash build_asm.sh
 
 ## ⚠ Disclaimer
 
